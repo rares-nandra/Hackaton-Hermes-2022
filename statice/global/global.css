@@ -1,0 +1,132 @@
+:root {
+    --gradient: linear-gradient(135deg, rgb(70, 208, 183) 0%, hsla(169, 100%, 85%, 1) 46%, rgb(87, 180, 230) 100%);
+    --background-gradient: linear-gradient(135deg, hsla(0, 0%, 100%, 1) 0%, hsla(169, 100%, 85%, 1) 26%, rgb(135, 207, 245) 100%);;
+    --background-primary: rgb(255, 255, 255);
+    --background-secondary: rgb(207, 207, 207);
+    --text-primary: rgb(0, 0, 0);
+    --accent-primary: rgb(70, 208, 183);
+    --accent-secondary: rgb(87, 180, 230);
+}
+
+.debug
+{
+    border: 2px solid red;
+}
+
+body 
+{
+    overflow-x: hidden;
+    background: var(--background-gradient);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat';
+    min-height: 100vh;
+    margin-bottom: 10vh;
+}
+
+i 
+{
+    font-family: "FontAwesome";
+}
+
+
+
+/* Animations */
+
+.animation-increase
+{
+    transition: transform 0.2s; 
+}
+
+.animation-increase:hover
+{
+    transform: scale(1.1);
+    opacity: 80%;
+}
+
+
+/* Buttons */
+
+button
+{
+    text-align: center;
+    border: none;
+    display: inline-block;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+    position: relative;
+    font-weight: 500;
+}
+
+/* Sizes */
+
+button.big
+{
+    padding: 10px 50px;
+}
+
+button.mid
+{
+    padding: 8px 25px;
+}
+
+button.small
+{
+    padding: 5px 15px;
+}
+
+/* Color schemes */
+
+button.gradient-border
+{
+    border-radius: 10px;
+    background-color: var(--background-primary); 
+}
+
+button.gradient-border::before
+{
+    content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 10px;
+  	border: 3px solid transparent;
+  	background: var(--gradient) border-box;
+	-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  	-webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Cards */
+
+.card
+{
+    display: inline-block;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: var(--background-primary);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+.link-mockup
+{
+    background: linear-gradient(135deg, rgb(12, 177, 147) 0%, rgb(91, 201, 181) 46%, rgb(20, 146, 213) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Text */
+
+.Title
+{
+    font-weight: 550;
+}
+
+.titlebox{
+    margin-top: 1.5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}

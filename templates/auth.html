@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name = "language" content = "RO">
+    <meta name = "Classification" content = "Health vacation planer">
+    <meta name = "description" content = "Plan a vacation with your health in mind">
+    <meta name = "keywords" content = "health vacation">
+    <meta name = "author" content = "Degrudalex">
+    <meta name = "theme-color" content = "#121212">
+    <meta name = "msapplication-navbutton-color" content = "#121212">
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#121212">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name = "mobile-web-app-capable" content = "yes">
+    <meta http-equiv = "Cache-Control" content = "cache"> 
+
+    <!-- Page Title and Favicon -->
+    <title>Safe Break</title>
+    <link rel = "icon" type = "image/png" href = "statice/images/favicon.ico">
+
+    <!-- Imports -->
+
+    <!-- JQuerry-->
+    <script src = "statice/thirdParty/JQuery/Jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href = "statice/thirdParty/Bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+    <script src = "statice/thirdParty/Bootstrap/js/bootstrapmin.js"></script>
+
+    <!-- Custom Fonts and icons -->
+    <link href = "https://fonts.googleapis.com/css?family=Montserrat:400,700" rel = "stylesheet" type = "text/css" crossorigin>
+    <script defer src = "statice/thirdParty/FontAwesome/js/all.js"></script>
+
+    <!-- CSS -->
+    <link href = "statice/global/global.css" rel = "stylesheet">
+    <link href = "statice/auth/auth.css" rel = "stylesheet">
+
+    <!-- Javascript -->
+    <script src = "statice/global/global.js" defer></script>
+    <script src = "statice/auth/auth.js" defer></script>
+</head>
+
+<body>
+    <div class="titlebox" style="margin-top:3%;">
+        <img src="statice/images/logo.svg" style="width: auto; height: 10vh;">
+        <h1 class="Title">SafeBreak</h1>
+       </div> 
+    <div class = "form-container">
+        <div class = "form" id = "login-form">
+            <h1 class = "title">Login</h1>
+
+            <form action = "/login" method = "post">
+                <div class = "form-box">
+                    <input type = "text" name = "user" required = "true">
+                    <label><i class = "fas fa-user"></i> Username</label>
+                </div>
+                
+                <div class="form-box">
+                    <input type = "password" name = "parola" required = "true">
+                    <label><i class = "fas fa-lock"></i> Password</label>
+                </div>
+    
+                <button class = "big gradient-border animation-increase" id = "login-submit">Login</button>
+            </form>
+        </div>
+
+        <div class = "form" id = "sign-up-form">
+            <h1 class = "title">Sign up</h1>
+
+            <form action = "/signup" method = "post">
+                <div class = "form-box">
+                    <input type = "text" name = "user" required = "true">
+                    <label><i class = "fas fa-user"></i> Username</label>
+                </div>
+                
+                <div class = "form-box">
+                    <input type = "text" name = "nume" required = "true">
+                    <label><i class = "fas fa-id-card"></i> Name</label>
+                </div>
+                
+                <div class="form-box">
+                    <input type = "password" name = "parola" id = "passwordInput" required = "true" oninput = "validateConfirmPassword()">
+                    <label id = "passwordLabel"><i class = "fas fa-lock"></i> Password</label>
+                </div>
+
+                <div class="form-box">
+                    <input type = "password" name = "confirmPassword" id = "confirmPasswordInput" required = "true" oninput = "validateConfirmPassword()">
+                    <label id = "confirmPasswordLabel"><i class = "fas fa-lock"></i> Confirm password</label>
+                </div>
+
+                <button type = "button" class = "big gradient-border animation-increase" id = "sign-up-submit">Sign up</button>
+            </form>
+        </div>
+        
+        <h4 id = "switch-text" onclick = "switchForms()">Don't have an account? <span class = "link-mockup">sign up</span></h4>
+        
+        {% if gresit %}
+            <p style="color:red; font-size: 17px; margin-top: 20px">Date invalide</p>
+        {% endif %}
+
+    </div>    
+</body>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name="language" content="RO">
+    <meta name="Classification" content="Health vacation planer">
+    <meta name="description" content="Plan a vacation with your health in mind">
+    <meta name="keywords" content="health vacation">
+    <meta name="author" content="Degrudalex">
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-navbutton-color" content="#121212">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-Control" content="cache">
+
+    <!-- Page Title and Favicon -->
+    <title>Safe Break - info</title>
+    <link rel = "icon" type = "image/png" href = "statice/images/favicon.ico">
+
+    <!-- Imports -->
+
+    <!-- JQuerry-->
+    <script src = "statice/thirdParty/JQuery/Jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href = "statice/thirdParty/Bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+    <script src = "statice/thirdParty/Bootstrap/js/bootstrapmin.js"></script>
+
+    <!-- Custom Fonts and icons -->
+    <link href = "https://fonts.googleapis.com/css?family=Montserrat:400,700" rel = "stylesheet" type = "text/css" crossorigin>
+    <script defer src = "statice/thirdParty/FontAwesome/js/all.js"></script>
+
+    <!-- CSS -->
+    <link href = "statice/global/global.css" rel = "stylesheet">
+    <link href = "statice/personalinfo/personalinfo.css" rel = "stylesheet">
+
+    <!-- Javascript -->
+    <script src = "statice/global/global.js" defer></script>
+    <script src = "statice/personalinfo/personalinfo.js" defer></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form" id="personalinfo-form">
+            <h1 class="title">Personal Information</h1>
+
+            <form action="/edit-info" method="post" enctype="multipart/form-data">
+
+                    
+                <div class="form-box">
+                    <input type="text" name="age" required="true">
+                    <label>Age</label>
+                </div>
+
+                <div class="form-box dropdown_container">
+                   
+                    <select  class="dropdown" name="gender" id="gender">
+                        <option id="gender-male" value="Male">Male</option>
+                        <option id="gender-female" value="Female"> <i class="fas fa-venus"></i>Female</option>
+                        <option id="gender-female" value="Other">Other</option>
+                    </select>
+                 
+                    <!-- <input type="submit" value="Submit"> -->
+
+                </div>
+
+                <div class="form-box dropdown_container">
+                    
+
+                    
+                    <select  class=" dropdown" name="blood" id="blood_lines">
+                        <option id="blood_line" value="Group A - Negative">Group A - Negative</option>
+                        <option id="blood_line" value="Group B - Negative">Group B - Negative</option>
+                        <option id="blood_line" value="Group AB - Negative">Group AB - Negative</option>
+                        <option id="blood_line" value="Group O - Negative">Group O - Negative</option>
+                        <option id="blood_line" value="Group A - Positive">Group A - Positive</option>
+                        <option id="blood_line" value="Group B - Positive">Group B - Positive</option>
+                        <option id="blood_line" value="Group AB - Positive">Group AB - Positive</option>
+                        <option id="blood_line" value="Group O - Positive">Group O - Positive</option>
+                    </select>
+                 
+                    <!-- <input type="submit" value="Submit"> -->
+
+                </div>
+
+
+                <div class="diseases">
+                    <span>Diseases</span>
+                    <label class="diseases_container">Blindness
+                        <input class = "teIubDani" type="checkbox" name="Blindness"  value="0" onchange="setDisease(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="diseases_container">Deafness
+                        <input class = "teIubDani" type="checkbox" name="Deafness"  value="0" onchange="setDisease(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="diseases_container">Locomotory disability
+                        <input class = "teIubDani" type="checkbox" name="Locomotory"  value="0" onchange="setDisease(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="diseases_container">Asthma
+                        <input class = "teIubDani" type="checkbox" name="Asthma"  value="0" onchange="setDisease(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="diseases_container">Allergies
+                        <input class = "teIubDani" type="checkbox" name="Allergies"  value="0" onchange="setDisease(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <br>
+                    <br>
+
+
+                </div>
+                <div class="hcphoto">
+                    
+                    <label for="hc-photo-upload" id="hcphotoupload" class="hcphotoupload" >
+                        Healthcard photo
+                    </label>
+                        <input id="hc-photo-upload" type="file" name="poza">
+                </div>
+
+
+
+                <button class="big gradient-border animation-increase" id="login-submit">Submit</button>
+            </form>
+        </div>
+
+
+    </div>
+</body>

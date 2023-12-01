@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Log in</title>
+</head>
+
+<body>
+    <form action = "{{ url_for('confirmareLog') }}", method = "POST">
+        <label for="nume">Nume:</label>
+        <input type="text" id="nume" name="nume" value="{{ request.form['nume'] }}" required><br><br>
+        <label for="parola">Parola:</label>
+        <input type="password" id="parola" name="parola" value="{{ request.form['parola'] }}" required><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>

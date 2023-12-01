@@ -1,0 +1,224 @@
+
+/* Form */
+body{
+    overflow: hidden;
+}
+.form-container
+{   
+    height: 80vh;
+    overflow: auto;
+    overflow-y: scroll;
+    position: absolute;
+    translate: -50% -50%;
+    top: calc(50% + 4vh);
+    left: 50%;
+    background-color: var(--background-primary);
+    border-radius: 20px;
+    padding: 80px 80px 60px 80px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+.form-box
+{
+    position: relative;
+    margin: 40px 0px 20px 0px;
+}
+
+.form-box input
+{
+    width: 40vw;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    border: none;
+    border-bottom: 1px solid var(--text-primary);
+    outline: none;
+    background: transparent;
+}
+
+.form-box label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form-box input:focus ~ label, .form-box input:valid ~ label 
+{
+    top: -20px;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 12px;
+}
+
+@media(max-width: 550px)
+{
+    .form-container
+    {
+        padding: 35px;
+    }
+    
+    .form-box label
+    {
+        font-size: 16px;
+    }
+
+    .form-box input
+    {
+        font-size: 13px;
+    }
+
+    #login-submit
+    {
+        padding: 5px 25px;
+    }
+}
+
+
+
+.title-container
+{
+    margin-top: 5vh ;
+    text-align: center;
+}
+
+/*Dropdown blood groups*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block
+  }
+
+  .dropdown{
+    border:0px; 
+    width: 40vw;
+    height: 5vh;
+    border-bottom: 1px solid var(--text-primary); ;
+  }
+  
+  
+/*Diseases*/
+.diseases{
+    margin-top: 40px;
+}
+.diseases span
+{
+    font-size: 25px;
+    color:black;
+}
+
+/*Checkbox*/
+/* The container */
+.diseases_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top:20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .diseases_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 10%; /*puscat ca trebuie calc din 25%-20px*/
+    left:0px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .diseases_container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .diseases_container input:checked ~ .checkmark {
+    background-color: var(--accent-primary);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .diseases_container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .diseases_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* /////////////////////////////////// HC photo ////////////////////////////////*/
+
+  input[type="file"] {
+    display: none;
+}
+.hcphotoupload{
+    width: 40vw;
+    border: 0px;
+    border-bottom:1px solid rgb(0, 0, 0);
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom:10px;
+}
+
+/*//////////////Unedited/////////////*/
+
+.centerphoto{
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+ width: 0px;
+}

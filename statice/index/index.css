@@ -1,0 +1,534 @@
+#PagesContainer
+{
+	width: 100%;
+}
+
+nav
+{
+    position: fixed;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    border-radius: 30px;
+    width: 80vw;
+    height: 65px;
+    left: 10vw;
+    bottom: -100px;
+}
+
+.NavbarIcon
+{
+	margin-top: 15px;
+	font-size: 25px;
+	color: black;
+}
+
+@media(min-width: 500px)
+{
+    nav
+    {
+        width: 400px;
+        height: 75px;
+        left: calc(50vw - 200px);
+    }
+
+	.NavbarIcon
+	{
+		margin-top: 18px;
+		font-size: 29px;
+	}
+}
+
+#NavbarActiveRow
+{
+	margin-top: 5px;
+}
+
+#ActiveMenu
+{
+	background-color: black;
+	height: 5px;
+	border-radius: 5px;
+	width: 15%;
+	transition: all 0s ease;
+}
+
+
+#search-container
+{
+    height: 80vh;
+}
+
+#search-container .row
+{
+    margin-top: 50px;
+}
+
+#search-title
+{
+    font-size: 20px;
+}
+
+@media (max-width: 550px)
+{
+    #search-title
+    {
+        font-size: 13px;
+    }
+}
+
+.dropdown
+{
+    border:0px;
+    width: 40vw;
+    height: 5vh;
+    border-bottom: 1px solid var(--text-primary); ;
+}
+
+label
+{
+    font-size: 20px;
+}
+
+.slider.round
+{
+    border-radius: 34px;
+}
+
+.slider.round:before 
+{
+    border-radius: 50%;
+}
+
+.switch 
+{   
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 36px;
+}
+
+.switch input 
+{ 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider 
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.slider:before 
+{
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider 
+{
+    background: var(--gradient);
+}
+
+input:focus + .slider 
+{
+    box-shadow: 0 0 1px var(--accent-primary);
+}
+
+input:checked + .slider:before 
+{
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+}
+
+.range-wrap 
+{   
+    margin: 2.5% auto;
+}
+
+.bubble 
+{
+    background: var(--accent-primary);
+    color: white;
+    padding: 4px 12px;
+    position: absolute;
+    border-radius: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    white-space: nowrap;
+}
+
+.bubble::after 
+{
+    overflow-x: auto;
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #0069D9;
+    left: 50%;
+}
+
+.slider.round
+{
+    border-radius: 34px;
+}
+
+.slider.round:before 
+{
+    border-radius: 50%;
+}
+
+#SearchPage
+{
+    padding-top: 15vh;
+}
+
+#hacky-card
+{
+    box-shadow: none; 
+    border: 0px;
+}
+
+.spacer
+{
+    margin-bottom: 3vh;
+}
+
+@media(max-width: 600px)
+{
+    #hacky-card
+    {
+        background-color: transparent;
+        margin-left: 0px;
+        margin-left: -42px;
+    }
+
+    #SearchPage
+    {
+        padding-top: 10vh;
+    }
+
+    .card
+    {
+        width: 90vw;
+    }
+
+    #search-container *
+    {
+        font-size: 15px;
+    }
+}
+
+#loader
+{
+    visibility: hidden;
+}
+
+.FeedDelete
+{
+    display: none;
+}
+
+.FeedDeleteMargin
+{
+    margin-bottom: 100vh;
+}
+
+.FeedPost
+{
+    margin-top: 50px;
+    width: 90%;
+    height: 1000px;
+    margin-left: 5%;
+}
+
+.FeedImage
+{
+    background-size: 100% 100%;
+    border-radius: 15px;
+    height: 550px;
+    max-width: 850px;
+}
+
+.FeedTextContainer
+{
+    background-color: var(--background-primary);
+}
+
+@media(min-width: 800px)
+{
+    .FeedImage:hover, .FeedVideo:hover
+    {
+        opacity: 80%;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+}
+
+.FeedVideo
+{
+    background-size: 100% 100%;
+    border-radius: 15px;
+    max-width: 850px;
+    overflow: hidden;
+}
+
+.Video
+{
+    height: 550px;
+    max-width: 850px;  
+}
+
+video 
+{
+    object-fit: fill;
+}
+
+.FeedImageRight, .FeedVideoRight
+{
+    margin-left: calc(50% - 525px);
+}
+
+.FeedImageLeft, .FeedVideoLeft
+{
+    margin-left: calc(50% - 325px);
+}
+
+.FeedTextContainer
+{
+    padding: 50px;
+    border-radius: 15px;
+    margin-top: -225px;
+    max-width: 600px;
+    box-shadow: -2px -5px 18px #000000;
+    position: absolute;
+}
+
+.FeedTextRight
+{
+    margin-left: calc(50% - 175px);
+}
+
+.FeedTextLeft
+{
+    margin-left: calc(50% - 625px);
+}
+
+.FeedText 
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.FeedActivator
+{
+    margin-top: -100px;
+}
+
+#FeedTitle
+{
+    margin-bottom: 100px;
+}
+
+#ContentChooserRow
+{
+    margin-bottom: 200px;
+}
+
+@media(max-width: 1300px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight
+    {
+        margin-left: 15%;
+        width: 70%;
+        height: 500px;
+        max-width: none;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        position: relative;
+        margin-left: 20%;
+        margin-top: -150px;
+        max-width: none;
+        width: 60%;
+    }
+}
+
+@media(max-width: 900px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        margin-left: 1%;
+        width: 98%;
+        height: 400px;
+        max-width: none;
+    }
+
+    .Video
+    {
+        border-radius: 30px;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        margin-top: -120px;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .FeedText 
+    {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .FeedActivator
+    {
+        margin-top: -100px;
+    }
+
+    #ContentChooserRow
+    {
+        margin-bottom: 175px;
+    }
+}
+
+@media(max-width: 700px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        height: 400px;
+    }
+
+    .FeedText 
+    {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+}
+
+@media(max-width: 600px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        height: 300px;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        margin-top: -50px;
+        width: 80%;
+        margin-left: 10%;
+        padding: 15px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .FeedActivator
+    {
+        margin-top: -275px;
+    }
+
+    #ContentChooserRow
+    {
+        margin-bottom: 325px;
+    }
+}
+
+@media(max-width: 500px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        height: 250px;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        margin-top: 0px;
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .FeedText 
+    {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media(max-width: 425px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        height: 200px;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        margin-top: 10px;
+    }
+
+    #FeedTitle
+    {
+        margin-top: -125px;
+    }
+}
+
+@media(max-width: 350px)
+{
+    .FeedImage, .FeedImageLeft, .FeedImageRight, .FeedVideo, .FeedVideoLeft, .FeedVideoRight, .Video
+    {
+        height: 160px;
+    }
+
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        padding: 15px;
+    }
+
+    .FeedText
+    {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media(max-width: 300px)
+{
+    .FeedTextContainer, .FeedTextLeft, .FeedTextRight
+    {
+        padding: 12px;
+    }
+}
+
+.FeedTextContainer
+{
+    margin-bottom: 7.5vh;
+}
+
+#feed
+{
+    margin-top: 40vh;
+}

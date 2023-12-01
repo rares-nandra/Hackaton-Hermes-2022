@@ -1,0 +1,112 @@
+/* Form */
+
+.form-container
+{
+    position: absolute;
+    translate: -50% -50%;
+    top: calc(50% + 4vh);
+    left: 50%;
+    background-color: var(--background-primary);
+    border-radius: 20px;
+    padding: 80px 80px 60px 80px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+.form-box
+{
+    position: relative;
+    margin: 40px 0px 20px 0px;
+}
+
+.form-box input
+{
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 1px solid var(--text-primary);
+    outline: none;
+    background: transparent;
+}
+
+.form-box label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form-box input:focus ~ label, .form-box input:valid ~ label 
+{
+    top: -20px;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 12px;
+}
+
+@media(max-width: 550px)
+{
+    .form-container
+    {
+        padding: 35px;
+    }
+    
+    .form-box label
+    {
+        font-size: 16px;
+    }
+
+    .form-box input
+    {
+        font-size: 13px;
+    }
+
+    #login-submit
+    {
+        padding: 5px 25px;
+    }
+}
+
+#switch-text
+{
+    margin-top: 25px;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+#switch-text:hover
+{
+    cursor: pointer;
+}
+
+#sign-up-form .form-box input
+{
+    margin-bottom: 5px;
+}
+
+#sign-up-submit
+{
+    margin-top: 20px;
+}
+
+.title-container
+{
+    margin-top: 5vh;
+    text-align: center;
+}
+
+#confirmPasswordInput
+{
+    color: red;
+}
+
+#confirmPasswordLabel
+{
+    color: red;
+}

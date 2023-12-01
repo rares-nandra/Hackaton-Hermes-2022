@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Meta tags -->
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name = "language" content = "RO">
+    <meta name = "Classification" content = "Health vacation planer">
+    <meta name = "description" content = "Plan a vacation with your health in mind">
+    <meta name = "keywords" content = "health vacation">
+    <meta name = "author" content = "Degrudalex">
+    <meta name = "theme-color" content = "#121212">
+    <meta name = "msapplication-navbutton-color" content = "#121212">
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#121212">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name = "mobile-web-app-capable" content = "yes">
+    <meta http-equiv = "Cache-Control" content = "cache"> 
+
+    <!-- Page Title and Favicon -->
+    <title>Safe Break</title>
+    <link rel = "icon" type = "image/png" href = "statice/images/favicon.ico">
+
+    <!-- Imports -->
+
+    <!-- JQuerry-->
+    <script src = "statice/thirdParty/JQuery/Jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href = "statice/thirdParty/Bootstrap/css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+    <script src = "statice/thirdParty/Bootstrap/js/bootstrapmin.js"></script>
+
+    <!-- Custom Fonts and icons -->
+    <link href = "https://fonts.googleapis.com/css?family=Montserrat:400,700" rel = "stylesheet" type = "text/css" crossorigin>
+    <script defer src = "statice/thirdParty/FontAwesome/js/all.js"></script>
+    
+    <!-- Swiper -->
+    <link href = "statice/thirdParty/Swiper/Swiper.css" rel = "stylesheet" type = "text/css">
+    <script src = "statice/thirdParty/Swiper/Swiper.js"></script>
+
+    <!-- CSS -->
+    <link href = "statice/global/global.css" rel = "stylesheet">
+    <link href = "statice/index/index.css" rel = "stylesheet">
+    <link href = "statice/personalinfounedited/personalinfounedited.css" rel = "stylesheet">
+
+    <!-- Javascript -->
+    <script src = "statice/global/global.js" defer></script>
+    <script src = "statice/index/index.js" defer></script>
+</head>
+
+<body style = "overflow: hidden !important;">
+	<!-- Navigation bar -->
+	<nav>
+		<div class = "container" id = "NavbarContainer">
+			<div class = "row" id = "NavbarIconRow">
+				<div class = "col-4 text-center NavbarIconCol" onclick = "SlideToPage(0)">
+					<i class = "fas fa-search NavbarIcon"></i>
+				</div>
+
+				<div class = "col-4 text-center NavbarIconCol" onclick = "SlideToPage(1)">
+					<i class = "fas fa-user NavbarIcon"></i>
+				</div>
+
+				<div class = "col-4 text-center NavbarIconCol" onclick = "SlideToPage(2)">
+					<i class = "fas fa-star NavbarIcon"></i>
+				</div>
+			</div>
+
+			<div class = "row" id = "NavbarActiveRow">
+				<div id = "ActiveMenu"></div>
+			</div>
+		</div>
+	</nav>
+
+    <!-- Site Pages -->
+	<div class = "container-fluid swiper-container" style = "height: 100vh; overflow-y: scroll;" id = "PagesContainer">
+		<div class = "swiper-wrapper">
+			<!-- Home Page -->
+			<div class = "swiper-slide" style = "padding-bottom: 120vh" id = "SearchPage">
+				
+                <!-- a -->
+                <div class = "container-fluid d-flex flex-column justify-content-center"  id = "search-container">
+                    <div class="titlebox" style="margin-top:7%;">
+                        <img src="statice/images/logo.svg" style="width: auto; height: 10vh;">
+                        <h1 class="Title">SafeBreak</h1>
+                       </div> 
+                    
+                    <div class = "row">
+                        <div class = "text-center">
+                            <div class = "card" style = "padding: 15px 55px 15px 55px;">
+                                <h1 id = "search-title">Search a vacation <i class = "fas fa-search"></i></h1>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class = "row">
+                        <div class = "text-center">
+                            <div class = "card">
+                                <div id = "search-form">
+                                    <div class = "dropdown_container swiper-no-swiping">
+                                        <label>Destination type</label>
+                                        <div class = "spacer"></div>
+
+                                        <select class = "dropdown" name = "vacation-type" id = "vacation-type-selector">
+                                            <option value = "urban_environment">City break</option>
+                                            <option value = "geological_formations">Mountain</option>
+                                            <option value = "beaches">Seaside</option>
+                                        </select>
+                                    </div>
+
+                                    <div class = "spacer"></div>
+                                    
+                                    <label>Show only Covid-19 safe destinations</label>
+                                    <div class = "spacer"></div>
+
+                                    <label class = "switch">
+                                        <input id = "covid-toggle" type = "checkbox" name="covid" checked>
+                                        <span class = "slider round"></span>
+                                    </label>
+                                    
+                                    <div class = "spacer"></div>
+
+                                    <label>Maximum distance from a hospital</label>
+                                    <div class = "spacer"></div>
+                                    
+                                    <div class = "swiper-no-swiping card" id = "hacky-card">
+                                        <div class = "range-wrap">
+                                            <input type = "range" class = "range">
+                                            <output class = "bubble"></output>
+                                        </div>
+                                    </div>
+
+                                   <div class = "spacer"></div>
+                                   
+                                    <button type = "button" class = "big gradient-border animation-increase" id = "search-submit" onclick = "search()">Search</button>
+                                </div>
+
+                               <div class = "spacer"></div>
+
+                               <h1 style = "font-size: 15px;" id = "loader">Loading destinations...</h1>
+
+                               <div class = "spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- b -->
+                <div class = "container-fluid d-flex flex-column justify-content-center"  id = "feed-container">
+                    <div id = "feed">
+
+                    </div>
+                </div>
+			</div>
+
+			<div class = "swiper-slide" id = "ProfilePage">
+                <div class="titlebox" style="margin-top:8%;">
+                    <img src="statice/images/logo.svg" style="width: auto; height: 10vh;">
+                    <h1 class="Title">SafeBreak</h1>
+                   </div> 
+				<!-- <section>
+					<div class = "text-center" style = "width: 100%; height: 100%; padding-top: 42.5vh;">
+						<h1>Page 2</h1>
+					</div>
+				</section> -->
+                <div class="boxforscroll">
+                <div class="form-container">
+                    <div class="form " id="personalinfo-form">
+                        <h1 class="title">Personal Information</h1>
+            
+                        <form action="/edit" method="get">
+            
+                                <div class="mistodecentrat">
+                            <div class="form-box dropdown_container dropdown">
+                                <i class = "fas fa-user"></i>{{ edit["nume"] }}
+                              
+                                 <!-- <input type="submit" value="Submit"> -->
+             
+                             </div>
+                            <div class="form-box dropdown_container dropdown">
+                                <i class="fas fa-calendar"></i>{{ edit["age"] }}
+                              
+                                 <!-- <input type="submit" value="Submit"> -->
+             
+                             </div>
+            
+                            <div class="form-box dropdown_container dropdown">
+                                <i class="fas fa-venus-mars"></i>{{ edit["gender"] }}
+                             
+                                <!-- <input type="submit" value="Submit"> -->
+            
+                            </div>
+            
+                            <div class="form-box dropdown_container dropdown">
+                                <i class="fas fa-heart"></i>{{ edit["blood"] }}
+                             
+                                <!-- <input type="submit" value="Submit"> -->
+            
+                            </div>
+                                </div>
+            
+            
+                            <div class="diseases">
+                                <span> <i class="fas fa-virus"></i>Diseases</span>
+                                <!-- jinja -->
+                                {% for i in edit["diseases"] %}
+                                <label class="diseases_container">{{ i }}
+                                    <input class = "teIubDani" type="checkbox" checked="true" readonly>
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                {% endfor %}
+                                
+                            </div>
+                            
+                            <div class="hcphoto">
+                                <span>Health Card</span>
+                                <div class=" centerphoto">
+                                <img src="http://rpii.local:5000/carduri"  alt="HC" width="70%" height="auto" style="border-radius: 20px;">
+                                </div>
+                            </div>
+
+                            <button class="big gradient-border animation-increase" id="login-submit">Edit</button>
+                        </form>
+                    </div>
+                </div>
+			</div>
+            </div>
+
+			<div class = "swiper-slide" id = "FavoritesPage">
+                <div class="titlebox" style="margin-top:8%;">
+                    <img src="statice/images/logo.svg" style="width: auto; height: 10vh;">
+                    <h1 class="Title">SafeBreak</h1>
+                   </div>
+				<div class = "container-fluid d-flex flex-column justify-content-center"  id = "favs-container">
+                    {{saved_destinations | safe}}
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
