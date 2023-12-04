@@ -6,4 +6,6 @@ SafeBreak our project for the 2022 Hermes Hackaton in Cluj-Napoca
 
 * @TudorGruian 
 * @spacalexandru02
-* @bogdandany 
+* @bogdandany
+
+## Result: 🥇 1st place
